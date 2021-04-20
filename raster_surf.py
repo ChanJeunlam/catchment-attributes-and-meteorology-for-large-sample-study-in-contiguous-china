@@ -13,7 +13,7 @@ import osr
 
 '''
 
-对《中国地面气候资料日值数据集（SURF_CLI_CHN_MUL_DAY）》的站点数据进行插值并生成GeoTIFF栅格存储
+对《中国地面气候资料日值数据集（SURF_CLI_CHN_MUL_DAY）》的站点数据进行插值并生成 GeoTIFF 栅格存储到指定目录
 
 Requirement: 
 SURF_CLI_CHN_MUL_DAY Dataset
@@ -100,7 +100,7 @@ def get_date_range_from_txt(txtfile: str):
 def remove_date_zeros(date):
     '''
 
-    将 datetime.datetime 转换为字符串，同时去除字符 ”0“
+    将 datetime.datetime 转换为字符串，同时去除字符 "0"
     Parameters
     ----------
     date datetime.datetime 或字符串（'2009-01-01'）
@@ -118,7 +118,9 @@ def remove_date_zeros(date):
 
 def geotif_from_array(array: np.array, lat_start: float, lat_end: float, lon_start: float, lon_end: float,
                       degree: float, output_file: str):
-    """ 将一个 numpy.array 写入一个带有位置信息的 GeoTIFF 文件，默认使用 WGS84 （EPSG：4326） 坐标系
+    """ 
+    将一个 numpy.array 写入一个带有位置信息的 GeoTIFF 文件，默认使用 WGS84 （EPSG：4326） 坐标系
+    
     array: 要写入 GeoTIFF 的数据
     lat_start: 最小纬度
     lat_end: 最大纬度
@@ -406,6 +408,7 @@ def variable_tif(date_start, date_end, variable, cfg):
 def mutil(cfg):
     '''
     多线程处理
+    
     :param cfg: configuration dict
     :return: None
     '''
