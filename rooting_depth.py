@@ -13,7 +13,7 @@ https://lpdaac.usgs.gov/products/mcd12q1v006/
 
 Requirement:
 (1) IGBP.tif: converted IGBP classification in raster form
-(2) root_depth.txt: calculated root_depth 50/99 for each type of land cover based on Eq. (2) and Table 2 in (Zeng 2001)
+(2) calculated_root_depth.txt: calculated root_depth 50/99 for each type of land cover based on Eq. (2) and Table 2 in (Zeng 2001)
 (2) 流域shapefile
 ├── folder_shp
 |   ├── outwtrshd_0000.shp
@@ -105,7 +105,7 @@ def root_depth_50_99_stats(shape_file: str, igbp_tif: str, depth_mapper: DepthMa
 
 if __name__ == '__main__':
     igbp_tif = './data/igbp.tif'
-    root_depth = "./root_depth.txt"
+    root_depth = "./calculated_root_depth.txt"
     shp_dir = './shapefiles'
     out = './output/root_depth.xlsx'
     depth_mapper = DepthMapper(root_depth)
