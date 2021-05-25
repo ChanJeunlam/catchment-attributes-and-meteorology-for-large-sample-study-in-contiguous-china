@@ -171,7 +171,6 @@ def zonal_stats(tif_file: str, shape_file: str, valid_min, valid_max) -> dict:
     :param valid_max: NDVI: [-2000, 10000]; LAI: [0, 100]
     :return:
     '''
-    # fill in missing values, the value 3.215970 is obtained from camels lai mean
     res = extract_raster_by_shape_file(tif_file, shape_file).flatten()
     res[res > valid_max] = -9999
     res[res < valid_min] = -9999
