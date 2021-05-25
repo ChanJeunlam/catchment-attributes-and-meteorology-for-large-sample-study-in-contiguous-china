@@ -21,7 +21,7 @@ Requirement:
 |   ├── 大型蒸发量
 |   |   ├── ...
 (2) 流域shapefile
-├── folder_raster
+├── folder_shp
 |   ├── outwtrshd_0000.shp
 |   ├── outwtrshd_0000.dbf
 |   ├── outwtrshd_0000.sbx
