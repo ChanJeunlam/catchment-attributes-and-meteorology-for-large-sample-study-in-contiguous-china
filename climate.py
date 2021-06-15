@@ -28,7 +28,7 @@ def p_seasonality(data):
     Returns
     -------
     float
-        mean p_seasonality over year 2009-2019
+        mean p_seasonality over year 2009-2018
     '''
 
     from sklearn.linear_model import LinearRegression
@@ -36,7 +36,7 @@ def p_seasonality(data):
     from tqdm import tqdm
 
     p_seasons = []
-    for year in tqdm(range(2009, 2019)):  # estimation is based on 11-year records
+    for year in tqdm(range(2009, 2019)):  # estimation is based on 10-year records
         df = data.loc[datetime.datetime(year, 5, 1):datetime.datetime(year + 1, 5, 1) - timedelta(1)]
 
         scores = []
