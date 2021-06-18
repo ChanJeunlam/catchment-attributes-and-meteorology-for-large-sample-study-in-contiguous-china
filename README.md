@@ -27,18 +27,12 @@ The directory should be structured as follows:
 
 In raster.py, change line 432-441, specify the output directory (will contain the interpolated rasters) and the root directory of the site observation data, and possibly other configurations. 
 The default interpolation range covers the whole of China.
-Interpolation can take hours to run. The resulting directory looks like this:
-
-<img src=https://user-images.githubusercontent.com/46937286/121157146-e2690c80-c87b-11eb-800b-f734bc1d44d9.png alt="drawing" width="200"/>
-<img src=https://user-images.githubusercontent.com/46937286/121157156-e432d000-c87b-11eb-96df-1a76a27f2ff6.png alt="drawing" width="800"/>
+Interpolation can take hours to run.
 
 3. Calculate the catchment mean based on the interpolated rasters
 
 
 In raster2catchment.py, change line 160-162, specify the path to the interpolated rasters, catchment shapefiles and the output directory.
-The shapefile directory should look like this:
-
-<img src=https://user-images.githubusercontent.com/46937286/121157208-ee54ce80-c87b-11eb-8ccb-0402a9eca27d.png alt="drawing" width="200"/>
 
 in which a catchment identifier is separated by an underscore.
 For each basin, a forcing.xlsx file is generated in the output directory.  e.g. "./forcing_time_series/basin_name/forcing.xlsx"
@@ -56,8 +50,7 @@ Note that the program assumes the file path contains the  basin name (line 117: 
 > from utils import * <br>
 > reproject_tif(path_glim_tif, path_output, out_crc='EPSG:4326') <br>
 
-Run glim.py
-
+Run glim.py.
 The directory should be structured as follows:
 
 ```bash
@@ -77,14 +70,14 @@ The resulting file will appear in the output dir.
 Source data: https://lpdaac.usgs.gov/products/mcd12q1v006/
 However, MODIS data is divided into different tiles, which is inconvenient for processing.
 We have merged the MODIS product into a single tif which can be downloaded at:
-[Zenodo]
+[Zenodo, tbd]
 
-Run igbp.py
+Run igbp.py.
 
 Required forlder sturcture:
 ```bash
 (1) IGBP.tif: converted IGBP classification in raster form
-(2) 流域shapefile
+(2) catchment shapefiles
 ├── folder_shp
 |   ├── outwtrshd_0000.shp
 |   ├── outwtrshd_0000.dbf
@@ -104,7 +97,7 @@ Required folder structure:
 ```bash
 (1) IGBP.tif: converted IGBP classification in raster form
 (2) calculated_root_depth.txt: calculated root_depth 50/99 for each type of land cover based on Eq. (2) and Table 2 in (Zeng 2001)
-(2) 流域shapefile
+(2) catchement shapefiles
 ├── folder_shp
 |   ├── outwtrshd_0000.shp
 |   ├── outwtrshd_0000.dbf
@@ -138,3 +131,5 @@ Required forlder sturcute:
 ```
 
 ### LAI/NDVI
+
+tba
