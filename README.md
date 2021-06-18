@@ -4,7 +4,7 @@ This repository contains the complement code for paper: Zhen Hao, Jin Jin, Runli
 This repository is currently under development.
 
 ## Instruction:
-### Meteorological time series
+### Meteorological time series:
 
 1. Download the site observation data (access permission needed)
 
@@ -34,14 +34,15 @@ Interpolation can take hours to run.
 
 In raster2catchment.py, change line 160-162, specify the path to the interpolated rasters, catchment shapefiles and the output directory.
 
-in which a catchment identifier is separated by an underscore.
+For the name of the catchment shapefiles, the catchment identifier should be separated by an underscore. e.g. basin_0000.shp
+
 For each basin, a forcing.xlsx file is generated in the output directory.  e.g. "./forcing_time_series/basin_name/forcing.xlsx"
 
-### Climate indicator
+### Climate indicator:
 In climate.py, change line 110 and 111, specify the path to the forcing time series and the output dir. Run climate.py. 
 Note that the program assumes the file path contains the  basin name (line 117: name = file.split('\\')[-2]).
 
-### Lithology
+### Lithology:
 1. Download the GLiM dataset: https://www.dropbox.com/s/9vuowtebp9f1iud/LiMW_GIS%202015.gdb.zip?dl=0
 2. Import the dataset to ArcMap
 3. Export GLiM to GeoTIFF format; we specify the cell size as 0.024424875
@@ -66,7 +67,7 @@ The directory should be structured as follows:
 Note: the program assumes the shapefile has a numeric identifier. e.g. ./shapefiles/0000.shp or ./shapefiles/basin_0000.shp
 The resulting file will appear in the output dir.
 
-### Land cover
+### Land cover:
 Source data: https://lpdaac.usgs.gov/products/mcd12q1v006/
 However, MODIS data is divided into different tiles, which is inconvenient for processing.
 We have merged the MODIS product into a single tif which can be downloaded at:
@@ -90,7 +91,7 @@ Note: the program assumes the shapefile has a numeric identifier. e.g. ./shapefi
 
 The resulting file will appear in the output dir.
 
-### Root depth
+### Root depth:
 Run rooting_depth.py
 
 Required folder structure:
@@ -106,7 +107,7 @@ Required folder structure:
 |   ├── ...
 ```
 
-### Topography
+### Topography:
 Download ASTER GDEM from https://asterweb.jpl.nasa.gov/gdem.asp; we recommend using NASA Earthdata.
 
 Run topography.py
@@ -130,6 +131,6 @@ Required forlder sturcute:
 |   ├── ...
 ```
 
-### LAI/NDVI
+### LAI/NDVI:
 
 tba
