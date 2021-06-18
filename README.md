@@ -6,7 +6,7 @@ This repository is currently under development.
 ## Instruction:
 ### Meteorological time series:
 
-1. Download the site observation data (access permission needed)
+1. Download the situ observations meteorological data (access permission needed)
 
 
 https://data.cma.cn/data/cdcdetail/dataCode/SURF_CLI_CHN_MUL_DAY_V3.0.html
