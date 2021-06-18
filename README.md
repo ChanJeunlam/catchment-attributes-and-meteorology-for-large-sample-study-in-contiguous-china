@@ -122,7 +122,7 @@ Required forlder sturcute:
 |   ├── ASTGTMV003_N34E108_dem.tif
 |   ├── ...
 
-(2) 流域shapefile
+(2) catchment shapefiles
 ├── folder_shp
 |   ├── outwtrshd_0000.shp
 |   ├── outwtrshd_0000.dbf
