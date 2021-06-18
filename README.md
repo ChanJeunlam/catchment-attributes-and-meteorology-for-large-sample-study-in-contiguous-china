@@ -4,7 +4,7 @@ This repository contains the complement code for paper: Zhen Hao, Jin Jin, Runli
 This repository is currently under development.
 
 ## Instruction:
-### Forcing time series
+### Meteorological time series
 
 1. Download the site observation data (access permission needed)
 
