@@ -15,7 +15,7 @@ properties at the Earth surface. Geochemistry, Geophysics, Geosystems, 13. DOI: 
 Requirement: 
 GlimRaster.tif: converted GliM in raster form (you can use ArcMap/QGis to complete this operation, we cannot directly share the converted data due to copyright issues)
 GLiMCateNumberMapping.csv: mapping number to lithology category
-glim_short2longname.txt: mapping short name to long name of lithology categories
+glim_short_long_name.txt: mapping short name to long name of lithology categories
 
 The directory should be structured as follows:
 
@@ -25,7 +25,7 @@ The directory should be structured as follows:
 |   ├── 0001.shp
 ├── GlimRaster.tif
 ├── GLiMCateNumberMapping.csv
-├── glim_short2longname.txt
+├── glim_short_long_name.txt
 
 '''
 
@@ -179,7 +179,7 @@ if __name__ == '__main__':
 
     glim_raster_tif = "./GlimRaster.tif"
     glim_cate_number_mapping_file = "./GLiMCateNumberMapping.csv"
-    short2long_name_txt = "./glim_short2longname.txt"
+    short2long_name_txt = "./glim_short_long_name.txt"
     nan_value = 65535
 
     glimer = Glim(glim_raster_tif=glim_raster_tif, glim_cate_number_mapping_file=glim_cate_number_mapping_file,
