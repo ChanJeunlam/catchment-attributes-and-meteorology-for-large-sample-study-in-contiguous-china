@@ -35,8 +35,8 @@ Note that the script assumes the file path contains the basin name (line 117: na
 ```bash
 ├── glim.py
 ├── shapefiles
-|   ├── 0000.shp
-|   ├── 0001.shp
+|   ├── basin_0000.shp
+|   ├── basin_0001.shp
 ├── GlimRaster.tif
 ├── GLiMCateNumberMapping.csv
 ├── glim_short2longname.txt
@@ -49,10 +49,10 @@ Note that the script assumes the file path contains the basin name (line 117: na
 (1) IGBP.tif: converted IGBP classification in raster form
 (2) catchment shapefiles
 ├── folder_shp
-|   ├── outwtrshd_0000.shp
-|   ├── outwtrshd_0000.dbf
-|   ├── outwtrshd_0000.sbx
-|   ├── outwtrshd_0000.cpg
+|   ├── basin_0000.shp
+|   ├── basin_0000.dbf
+|   ├── basin_0000.sbx
+|   ├── basin_0000.cpg
 |   ├── ...
 ```
 
@@ -63,10 +63,10 @@ Run rooting_depth.py. Required folder structure:
 (2) calculated_root_depth.txt: calculated root_depth 50/99 for each type of land cover based on Eq. (2) and Table 2 in (Zeng 2001)
 (2) catchement shapefiles
 ├── folder_shp
-|   ├── outwtrshd_0000.shp
-|   ├── outwtrshd_0000.dbf
-|   ├── outwtrshd_0000.sbx
-|   ├── outwtrshd_0000.cpg
+|   ├── basin_0000.shp
+|   ├── basin_0000.dbf
+|   ├── basin_0000.sbx
+|   ├── basin_0000.cpg
 |   ├── ...
 ```
 
@@ -84,10 +84,10 @@ Run rooting_depth.py. Required folder structure:
 
 (2) catchment shapefiles
 ├── folder_shp
-|   ├── outwtrshd_0000.shp
-|   ├── outwtrshd_0000.dbf
-|   ├── outwtrshd_0000.sbx
-|   ├── outwtrshd_0000.cpg
+|   ├── basin_0000.shp
+|   ├── basin_0000.dbf
+|   ├── basin_0000.sbx
+|   ├── basin_0000.cpg
 |   ├── ...
 ```
 
@@ -95,5 +95,20 @@ Run rooting_depth.py. Required folder structure:
 
 1. Download modis product: https://lpdaac.usgs.gov/products/mcd15a3hv006/ (for LAI) and https://lpdaac.usgs.gov/products/mod13q1v006/ (for NDVI). 
 2. The source data are in hdfs format. The provided script first find needed hdfs tiles for the given catchment and merge them. Then perform zonal statistics to get catchment-averaged values. Put the downloaded hdfs files into the folder "./MODIS/MOD13Q1[MCD15A3]" and create an output folder e.g. "./output/ndvi", and run the code lai.py [ndvi.py].
+```bash
+(1) MODIS data
+├── MOD13Q1/MCD15A3H
+|   ├── MCD15A3H.A2002185.h22v04.006.2015149102803.hdf
+|   ├── MCD15A3H.A2002186.h22v04.006.2015149102803.hdf
+|   ├── MCD15A3H.A2002187.h22v04.006.2015149102803.hdf
+|   ├── MCD15A3H.A2002188.h22v04.006.2015149102803.hdf
+(2) Catchment shapefiles
+├── folder_shp
+|   ├── basin_0000.shp
+|   ├── basin_0000.dbf
+|   ├── basin_0000.sbx
+|   ├── basin_0000.cpg
+|   ├── ...
+```
 
 
