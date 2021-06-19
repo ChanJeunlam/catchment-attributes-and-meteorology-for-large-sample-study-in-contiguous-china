@@ -39,7 +39,7 @@ Note that the script assumes the file path contains the basin name (line 117: na
 |   ├── basin_0001.shp
 ├── GlimRaster.tif
 ├── GLiMCateNumberMapping.csv
-├── glim_short2longname.txt
+├── glim_short_long_name.txt
 ```
 
 ### Land cover:
