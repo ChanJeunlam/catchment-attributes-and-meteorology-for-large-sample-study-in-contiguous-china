@@ -47,7 +47,7 @@ Note that the script assumes the file path contains the basin name (line 117: na
 2. Run igbp.py. The resulting file will appear in the output-dir. Required data folder structure:
 ```bash
 (1) IGBP.tif: converted IGBP classification in raster form
-(2) catchment shapefiles
+(2) Catchment shapefiles
 ├── folder_shp
 |   ├── basin_0000.shp
 |   ├── basin_0000.dbf
@@ -61,7 +61,7 @@ Run rooting_depth.py. Required folder structure:
 ```bash
 (1) IGBP.tif: converted IGBP classification in raster form
 (2) calculated_root_depth.txt: calculated root_depth 50/99 for each type of land cover based on Eq. (2) and Table 2 in (Zeng 2001)
-(2) catchement shapefiles
+(2) Catchement shapefiles
 ├── folder_shp
 |   ├── basin_0000.shp
 |   ├── basin_0000.dbf
@@ -82,7 +82,7 @@ Run rooting_depth.py. Required folder structure:
 |   ├── ASTGTMV003_N34E108_dem.tif
 |   ├── ...
 
-(2) catchment shapefiles
+(2) Catchment shapefiles
 ├── folder_shp
 |   ├── basin_0000.shp
 |   ├── basin_0000.dbf
