@@ -94,6 +94,6 @@ Run rooting_depth.py. Required folder structure:
 ### LAI/NDVI:
 
 1. Download modis product: https://lpdaac.usgs.gov/products/mcd15a3hv006/ (for LAI) and https://lpdaac.usgs.gov/products/mod13q1v006/ (for NDVI). 
-2. The source data are in hdfs format. The provided script first find needed hdfs tiles for the given catchment and merge them. Then perform zonal statistics to get catchment-averaged values. Put the downloaded hdfs files into the folder ./MODIS/MOD13Q1[MCD15A3] and created an output folder e.g. ./output/ndvi, and run the code lai.py [ndvi.py].
+2. The source data are in hdfs format. The provided script first find needed hdfs tiles for the given catchment and merge them. Then perform zonal statistics to get catchment-averaged values. Put the downloaded hdfs files into the folder "./MODIS/MOD13Q1[MCD15A3]" and create an output folder e.g. "./output/ndvi", and run the code lai.py [ndvi.py].
 
 
