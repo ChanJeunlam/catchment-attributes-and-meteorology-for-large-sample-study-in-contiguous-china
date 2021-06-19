@@ -6,7 +6,7 @@ from tqdm import tqdm
 from utils import *
 
 '''
-基于ASTER GDEM(https://asterweb.jpl.nasa.gov/gdem.asp) 统计流域地形特征
+基于 ASTER GDEM: https://asterweb.jpl.nasa.gov/gdem.asp 统计流域地形特征
 
 Requirement:
 (1) ASTER GDEM
@@ -16,7 +16,7 @@ Requirement:
 |   ├── ASTGTMV003_N33E109_dem.tif
 |   ├── ASTGTMV003_N34E108_dem.tif
 |   ├── ...
-(2) 流域shapefile
+(2) Catchment shapefiles
 ├── folder_shp
 |   ├── outwtrshd_0000.shp
 |   ├── outwtrshd_0000.dbf
@@ -27,18 +27,21 @@ Requirement:
 
 
 def load_N_E_from_dem_name(dem_file: str):
+    ''' get lat and lon from aster dem file names '''
     N = re.findall('N(\d+)', dem_file)[0]
     E = re.findall('E(\d+)', dem_file)[0]
     return {'N': int(N), 'E': int(E)}
 
 
 def shapefile_N_E(shpfile: str):
+    ''' get min/max lat/lon, this is for determining the range of needed dem files '''
     sf = shapefile.Reader(shpfile)
     bbox = sf.bbox
     return {'N_min': bbox[1], 'N_max': bbox[3], 'E_min': bbox[0], 'E_max': bbox[2]}
 
 
 def fetch_shapefile_needed_DEM_range(shpfile: str):
+    ''' get the range of needed dem files for the given shapefile '''
     N_E = shapefile_N_E(shpfile)
     Ns = range(math.floor(N_E['N_min']), math.ceil(N_E['N_max']) + 1)
     Es = range(math.floor(N_E['E_min']), math.ceil(N_E['E_max']) + 1)
@@ -46,6 +49,7 @@ def fetch_shapefile_needed_DEM_range(shpfile: str):
 
 
 def elev_mean(shpfile: str, dem_folder: str):
+    ''' calculate mean elevation of the catchment '''
     if os.path.isfile(tmp_merged):
         os.remove(tmp_merged)
     if os.path.isfile(tmp_reprojected):
@@ -80,6 +84,7 @@ def elev_mean(shpfile: str, dem_folder: str):
 
 
 def calculate_slope(DEM):
+    ''' calculate the slope of a given dem '''
     dem_path = DEM
     shasta_dem = rd.LoadGDAL(dem_path, no_data=-128)
     slope = rd.TerrainAttribute(shasta_dem, attrib='slope_riserun')
@@ -87,6 +92,7 @@ def calculate_slope(DEM):
 
 
 def slope_mean(shpfile: str, dem_folder: str):
+    ''' calculate the slope of a given catchment '''
     if os.path.isfile(tmp_merged):
         os.remove(tmp_merged)
     if os.path.isfile(tmp_reprojected):
@@ -141,18 +147,13 @@ def slope_mean(shpfile: str, dem_folder: str):
     return res
 
 
-def shp_areas(shpfile: str):
-    import geopandas as gpd
-    return gpd.read_file(shpfile).area * 111 ** 2
-
-
 def main(outpath):
     res = []
     print(len([file for file in absolute_file_paths(shp_folfer) if file.endswith('.shp')]))
     shps = [file for file in absolute_file_paths(shp_folfer) if file.endswith('.shp')]
     for shpfile in tqdm(shps):
         tmp_res = {'shp_id': shp_id(shpfile), 'elev(m)': elev_mean(shpfile, dem_folder)['mean'],
-                   'slope(m/km)': slope_mean(shpfile, dem_folder), 'area(km^2)': shp_areas(shpfile)[0]}
+                   'slope(m/km)': slope_mean(shpfile, dem_folder)}
         tmp_res.update(load_N_E_from_dem_name(shpfile))
         res.append(tmp_res)
     pd.DataFrame(res).to_excel(outpath)
