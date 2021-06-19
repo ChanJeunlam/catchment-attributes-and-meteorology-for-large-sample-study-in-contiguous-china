@@ -81,7 +81,6 @@ Run rooting_depth.py. Required folder structure:
 |   ├── ASTGTMV003_N33E109_dem.tif
 |   ├── ASTGTMV003_N34E108_dem.tif
 |   ├── ...
-
 (2) Catchment shapefiles
 ├── folder_shp
 |   ├── basin_0000.shp
