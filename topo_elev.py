@@ -161,7 +161,7 @@ def main(outpath):
 
 if __name__ == '__main__':
     dem_folder = './folder_gdem'
-    shp_folfer = './folder_shp'
+    shp_folfer = './shapefiles'
     outpath = './output/topo'
     tmp_merged = 'merge_cache.tif'
     tmp_reprojected = 'reproject_cache.tif'
