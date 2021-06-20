@@ -5,16 +5,16 @@ from tqdm import tqdm
 from utils import *
 
 '''
-基于MODIS IGBP分类计算流域有效根深分布(Zeng 2001)
+基于 MODIS IGBP 分类计算流域有效根深分布 (Zeng 2001)
 
-reference:
+Reference:
 Zeng, X. (2001). "Global vegetation root distribution for land modeling." Journal of Hydrometeorology 2(5): 525-530.
 https://lpdaac.usgs.gov/products/mcd12q1v006/
 
 Requirement:
 (1) IGBP.tif: converted IGBP classification in raster form
 (2) calculated_root_depth.txt: calculated root_depth 50/99 for each type of land cover based on Eq. (2) and Table 2 in (Zeng 2001)
-(2) 流域shapefile
+(2) Catchment shapefiles
 ├── folder_shp
 |   ├── outwtrshd_0000.shp
 |   ├── outwtrshd_0000.dbf
