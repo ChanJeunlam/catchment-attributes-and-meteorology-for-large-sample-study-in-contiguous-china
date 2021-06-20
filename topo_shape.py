@@ -10,7 +10,9 @@ from shapely.ops import transform
 
 '''
 Drainage basin boundary data and the river network data are obtained from the Global Drainage Basin Database (GDBD) 
-dataset: https://www.cger.nies.go.jp/db/gdbd/gdbd_index_e.html.
+dataset: https://www.cger.nies.go.jp/db/gdbd/gdbd_index_e.html. Here, determining the basin outlet needs river network 
+and basin boundaries as input. Since the river network provided by GDBD did not cover all basins (mainly watersheds 
+where the river stream is not clear), basin outlet and hence river length cannot be derived.
 
 1. Download Asian river network data from: https://www.cger.nies.go.jp/db/gdbd/gdbd_index_e.html. The needed file is "as_streams.shp" in "Asia.zip" (need export from the .mdb database using ArcMap/QGIS).
 2. Specify the path to "as_streams.shp", catchment shapefiles and the output directory. Run topo_shape.py
