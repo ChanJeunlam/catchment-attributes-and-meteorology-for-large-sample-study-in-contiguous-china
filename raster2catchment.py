@@ -20,7 +20,7 @@ Requirement:
 |   |   ├── 1954-1-2-20-20时累计降水量
 |   ├── 大型蒸发量
 |   |   ├── ...
-(2) 流域shapefile
+(2) Catchment shapefiles
 ├── folder_shp
 |   ├── outwtrshd_0000.shp
 |   ├── outwtrshd_0000.dbf
