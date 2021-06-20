@@ -96,7 +96,7 @@ Run rooting_depth.py. Required folder structure:
 ### Topography (Shape characteristics):
 Shape characteristics are calculated based on catchment length (the mainstream length measured from the basin outlet to the remotest point on the basin boundary), catchment perimeters and catchment area. The calculation is first performed in decimal degree, and then the units are converted to kilometres by projecting to UTM coordinate system.
 
-1. Download Asian river network data from: https://www.cger.nies.go.jp/db/gdbd/gdbd_index_e.html. The needed file is "as_streams.shp" in "Asia.zip" (need export from the .mdb database using ArcMap/QGIS).
+1. Download Asian river network data from: https://www.cger.nies.go.jp/db/gdbd/gdbd_index_e.html. The needed file is "as_streams.shp" in "Asia.zip" (need project to WGS84 and export from the .mdb database using ArcMap/QGIS).
 2. Specify the path to "as_streams.shp", catchment shapefiles and the output directory. Run topo_shape.py.
 
 
