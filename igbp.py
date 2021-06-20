@@ -4,15 +4,15 @@ import pandas as pd
 from utils import *
 
 '''
-基于MODIS MCD12Q1产品LC_Type1计算流域每种土地覆盖类型所占比例
+基于 MODIS MCD12Q1 产品 LC_Type1 计算流域每种土地覆盖类型所占比例
 （Annual International Geosphere-Biosphere Programme (IGBP) classification）
 
-reference:
+Reference:
 https://lpdaac.usgs.gov/products/mcd12q1v006/
 
 Requirement:
 (1) IGBP.tif: converted IGBP classification in raster form
-(2) 流域shapefile
+(2) Catchment shapefiles
 ├── folder_shp
 |   ├── outwtrshd_0000.shp
 |   ├── outwtrshd_0000.dbf
