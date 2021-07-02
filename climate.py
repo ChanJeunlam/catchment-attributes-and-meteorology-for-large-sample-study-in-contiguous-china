@@ -128,11 +128,11 @@ def low_prec_freq(data: str):
 def low_prec_dur(data: str):
     data = np.array(data)
     tmp_data = data.copy()
-    tmp_data[data < 1] = 1  # 降雨小于 1mm 的日子标记为 1
-    tmp_data[data > 1] = 0  # 降雨大于 1mm 的日子 标记为 0
+    tmp_data[data < 1] = 1
+    tmp_data[data > 1] = 0
     tmp = [len(x) for x in split_a_list_at_zeros(tmp_data)]
     if len(tmp) > 0:
-        return np.mean(tmp)  # 在 0 处分开，得到 1的序列
+        return np.mean(tmp)
     else:
         return None
 
