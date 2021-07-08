@@ -46,8 +46,8 @@ Note that the script assumes the file path contains the basin name (line 117: na
 ```
 
 ### Land cover:
-1. Source data: https://lpdaac.usgs.gov/products/mcd12q1v006/. However, MODIS data is divided into different tiles, which is inconvenient for processing. We have merged the MODIS product into a single tif which can be downloaded here: [Zenodo, tbd]. Download the processed MODIS data (IGBP.tif).
-2. Run igbp.py. The resulting file will appear in the output-dir. Required data folder structure:
+1. Source data: https://lpdaac.usgs.gov/products/mcd12q1v006/. However, MODIS data is divided into different tiles, which is inconvenient for processing. We have merged the MODIS product into a single tif which can be downloaded here: https://1drv.ms/u/s!AqzR0fLyn9KKspF4xxbe0xM7qJNzkA?e=TYyZeC. Download the processed MODIS data (IGBP.tif).
+3. Run igbp.py. The resulting file will appear in the output-dir. Required data folder structure:
 ```bash
 (1) IGBP.tif: converted IGBP classification in raster form
 (2) Catchment shapefiles
